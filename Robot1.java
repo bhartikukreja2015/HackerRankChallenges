@@ -89,7 +89,7 @@ return 0;
 
 }
 */
-package ocr;
+
 
 import java.util.Scanner;
 
