@@ -1,10 +1,9 @@
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.StringTokenizer;
 
-public class AprilCircuits1A 
-{
-	static int i,c;
+class TestClass {
+static int i,c;
 	static boolean isVowel(char ch)
 	{
 		 if((ch=='a')||(ch=='e')||(ch=='i')||(ch=='o')||(ch=='u')||(ch=='y'))
@@ -31,7 +30,7 @@ public class AprilCircuits1A
 	        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 	       
 	        String firstline = br.readLine();
-	       
+	        int resultflag=0;
 	        int N = Integer.parseInt(firstline);
 	        for(int i=0; i<N;i++) 
 	        	   { 
@@ -42,6 +41,7 @@ public class AprilCircuits1A
 			       if(vowelCount<(secondline.length()-vowelCount))
 			        {
 			    	   System.out.println("hard"); 
+			    	  
 			    	   continue;
 			        }
 			       char secondLineChar []=secondline.toCharArray();
@@ -49,7 +49,7 @@ public class AprilCircuits1A
 			       {
 			    	  if(check>=3)
 			    	  {
-			    		  System.out.println("hard");
+			    		  resultflag=0;
 			    		  break;
 			    	  }
 			    	   if(!isVowel(secondLineChar[j]))
@@ -64,12 +64,22 @@ public class AprilCircuits1A
 			           
 			      if(check<3)
 			      {
+			    	  resultflag=1;
+			      }
+			    	 else
+			    	 {
+			    	 	resultflag=0;
+			    	 }
+			      if(resultflag==0)
+			      {
+			    	  System.out.println("hard");
+			      }
+			      else
+			      {
 			    	  System.out.println("easy");
 			      }
-			    	  
 			       
 			           
 	        	   }
 
-	}
-}
+	}}
